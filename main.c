@@ -1,24 +1,47 @@
 //
 //  main.c
-//  hw5
+//  hw9
 //
-//  Created by M1HR on 2022/4/17.
+//  Created by M1HR on 2022/5/22.
 //
 
 #include <stdio.h>
 
-double sqrt(double); //宣告根號函式
-double Length(double,double); //宣告Length函式
+void sort(int*, int*, int*);
 
-int main(){
-
-    int x=3, y=4;
-    printf("Before Normalize: (x,y)=(%d,%d)\n",x,y);
-    printf("After Normalize: (x,y)=(%.1f,%.1f)\n",x/Length(x,y),y/Length(x,y));
-    //呼叫函式length來標準化向量（x,y)
+int main() {
+    int a=9; int b=10; int c=8;
+    sort(&a,&b,&c);//取址
+    printf("Descending order of a, b, c: %d,%d,%d\n",a,b,c);
+    printf("Enter your own three values:\n");
+    scanf("%d%d%d",&a,&b,&c);
+    sort(&a,&b,&c);
+    printf("Descending order of entered three values: %d,%d,%d\n",a,b,c);
     return 0;
 }
 
-double Length (double x,double y){
-    return sqrt(x*x+y*y); //回傳向量x,y的長度
+void sort(int *a, int *b, int *c){ //指標
+    int temp;
+    int *p1,*p2,*p3;
+    p1=a;
+    p2=b;
+    p3=c;
+    
+    if(*p1<*p3){
+        temp=*p1;
+        *p1=*p3;
+        *p3=temp;
+    }
+    if(*p1<*p2){
+        temp=*p1;
+        *p1=*p2;
+        *p2=temp;
+    }
+    if(*p2<*p3){
+        temp=*p2;
+        *p2=*p3;
+        *p3=temp;
+    }
+    
 }
+
