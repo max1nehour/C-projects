@@ -38,7 +38,7 @@ int main() {
     }
     printf("\n");
     
-//    函式的工作就來囉 幹 我不會！
+//    函式的工作就來囉
     while(head<tail){
     
     if(n>middle){
